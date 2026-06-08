@@ -43,7 +43,6 @@ public class AuthenticationService {
                 .orElseThrow(() -> new IllegalStateException(
                         "Kullanıcı doğrulandı ancak veritabanında bulunamadı: " + request.username()
                 ));
-
         String jwtToken = jwtService.generateToken(user);
         return new AuthenticationResponse(jwtToken);
     }
